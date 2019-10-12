@@ -11,6 +11,16 @@ def convert(baseFrom, baseTo, number):
     decRes = 0
     decList = []
     expo = len(stringed) - 1
+
+    vals = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+    valid = True
+
+    for x in number: 
+        newVals = slice(baseFrom)
+        if x not in newVals:
+            return valid ==  False
+
+        
     for w in stringed:
         if not w.isnumeric():
             lowered = w.lower()
@@ -38,4 +48,10 @@ def convert(baseFrom, baseTo, number):
     strRes = ''
     for w in listRes:
         strRes += w
-    return strRes
+    
+    if valid == True:
+        return strRes
+    else: 
+        print("error")
+
+convert(2, 10, "0001")
