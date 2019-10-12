@@ -1,14 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[35]:
-
-
-
-
-
-# In[103]:
-
 
 def convert(baseFrom, baseTo, number):
     #note: this function does not check that the number is valid in the given base
@@ -22,6 +11,8 @@ def convert(baseFrom, baseTo, number):
     stringed = str(number)
     decRes = int(stringed, baseFrom)
     highExpo = 0
+
+
     while baseTo**highExpo <= decRes:
         highExpo +=1
     listRes = []
@@ -39,23 +30,8 @@ def convert(baseFrom, baseTo, number):
             listRes.append('0')
     strRes = ''
     for w in listRes:
-        strRes += w
-    return strRes
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-
-
-
-# In[104]:
+        strRes += w   
+        return strRes
 
 
 def calculate(numbers, operations, bases, baseRes):
@@ -92,23 +68,4 @@ def calculate(numbers, operations, bases, baseRes):
                 break
     return convert(10, baseRes, int(numbers[0] + .5))
 
-
-# In[107]:
-
-
-
-
-
-# In[106]:
-
-
-
-
-
-# 
-
-# In[ ]:
-
-
-
-
+convert(2, 10, "A2")
